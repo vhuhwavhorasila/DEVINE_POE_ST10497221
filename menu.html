@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu | DEVINE DINE</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -25,7 +27,6 @@
         </div>
     </header>
 
-    
     <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
         <div class="container hero-content">
             <h1>Our Menu</h1>
@@ -36,45 +37,289 @@
     <section class="menu">
         <div class="container">
             <h2 class="text-center">Our Culinary Offerings</h2>
+            
+            <!-- Menu Controls -->
+            <div class="menu-controls">
+                <div class="search-container">
+                    <input type="text" id="menu-search" placeholder="Search menu items...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div class="filter-controls">
+                    <div class="dietary-filters">
+                        <span>Dietary:</span>
+                        <button class="dietary-filter-btn" data-diet="vegetarian">Vegetarian</button>
+                        <button class="dietary-filter-btn" data-diet="gluten-free">Gluten-Free</button>
+                        <button class="dietary-filter-btn" data-diet="spicy">Spicy</button>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <span>Sort by:</span>
+                        <select id="sort-menu">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name">Name: A-Z</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
             <div class="menu-categories">
-                <button class="menu-category-btn active">Starters</button>
-                <button class="menu-category-btn">Mains</button>
-                <button class="menu-category-btn">Desserts</button>
-                <button class="menu-category-btn">Drinks</button>
-                <button class="menu-category-btn">Wine List</button>
+                <button class="menu-category-btn active" data-category="all">All</button>
+                <button class="menu-category-btn" data-category="starters">Starters</button>
+                <button class="menu-category-btn" data-category="mains">Mains</button>
+                <button class="menu-category-btn" data-category="desserts">Desserts</button>
+                <button class="menu-category-btn" data-category="drinks">Drinks</button>
+                <button class="menu-category-btn" data-category="wine">Wine List</button>
             </div>
             
             <div class="menu-items">
-                <div class="menu-item">
-                    <h3>Bobotie Spring Rolls</h3>
+                <!-- Starters -->
+                <div class="menu-item" data-category="starters" data-diet="spicy" data-price="95">
+                    <div class="menu-item-header">
+                        <h3>Bobotie Spring Rolls</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="bobotie-spring-rolls">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                     <p>Crispy pastry filled with spiced minced meat, served with apricot chutney</p>
-                    <div class="menu-item-price">R95</div>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R95</div>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag spicy">Spicy</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <h3>Cape Malay Seafood Curry</h3>
-                    <p>Line fish, prawns and calamari in a fragrant coconut curry sauce</p>
-                    <div class="menu-item-price">R165</div>
-                </div>
-                <div class="menu-item">
-                    <h3>Braised Karoo Lamb</h3>
-                    <p>Slow-cooked lamb shank with root vegetables and red wine jus</p>
-                    <div class="menu-item-price">R245</div>
-                </div>
-                <div class="menu-item">
-                    <h3>Springbok Carpaccio</h3>
+                
+                <div class="menu-item" data-category="starters" data-price="120">
+                    <div class="menu-item-header">
+                        <h3>Springbok Carpaccio</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="springbok-carpaccio">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                     <p>Thinly sliced springbok with truffle oil, wild rocket and parmesan</p>
-                    <div class="menu-item-price">R120</div>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R120</div>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <h3>West Coast Mussels</h3>
+                
+                <div class="menu-item" data-category="starters" data-price="135">
+                    <div class="menu-item-header">
+                        <h3>West Coast Mussels</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="west-coast-mussels">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                     <p>Fresh mussels in a white wine, garlic and cream sauce</p>
-                    <div class="menu-item-price">R135</div>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R135</div>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <h3>Vegetable Samosas</h3>
+                
+                <div class="menu-item" data-category="starters" data-diet="vegetarian" data-price="85">
+                    <div class="menu-item-header">
+                        <h3>Vegetable Samosas</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="vegetable-samosas">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
                     <p>Spiced vegetable filled pastries with mango atchar</p>
-                    <div class="menu-item-price">R85</div>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R85</div>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
                 </div>
+                
+                <!-- Mains -->
+                <div class="menu-item" data-category="mains" data-price="165">
+                    <div class="menu-item-header">
+                        <h3>Cape Malay Seafood Curry</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="cape-malay-seafood-curry">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Line fish, prawns and calamari in a fragrant coconut curry sauce</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R165</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="mains" data-price="245">
+                    <div class="menu-item-header">
+                        <h3>Braised Karoo Lamb</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="braised-karoo-lamb">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Slow-cooked lamb shank with root vegetables and red wine jus</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R245</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="mains" data-price="195">
+                    <div class="menu-item-header">
+                        <h3>Ostrich Fillet</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="ostrich-fillet">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Grilled ostrich served with sweet potato mash and red wine reduction</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R195</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="mains" data-diet="vegetarian" data-price="125">
+                    <div class="menu-item-header">
+                        <h3>Vegetable Bobotie</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="vegetable-bobotie">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Traditional spiced vegetable bake with yellow rice and sambals</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R125</div>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts" data-price="85">
+                    <div class="menu-item-header">
+                        <h3>Malva Pudding</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="malva-pudding">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Traditional South African baked sponge pudding with apricot sauce</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R85</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="desserts" data-price="65">
+                    <div class="menu-item-header">
+                        <h3>Koeksisters</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="koeksisters">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Traditional twisted pastries soaked in syrup</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R65</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="desserts" data-price="95">
+                    <div class="menu-item-header">
+                        <h3>Cape Brandy Pudding</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="cape-brandy-pudding">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Rich date pudding with brandy custard</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R95</div>
+                    </div>
+                </div>
+                
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drinks" data-price="45">
+                    <div class="menu-item-header">
+                        <h3>Rooibos Iced Tea</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="rooibos-iced-tea">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Refreshing South African herbal tea with lemon and mint</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R45</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="drinks" data-price="75">
+                    <div class="menu-item-header">
+                        <h3>Amarula Cream</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="amarula-cream">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>South African cream liqueur served on the rocks</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R75</div>
+                    </div>
+                </div>
+                
+                <!-- Wine List -->
+                <div class="menu-item" data-category="wine" data-price="180">
+                    <div class="menu-item-header">
+                        <h3>Chenin Blanc</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="chenin-blanc">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Stellenbosch region, crisp and fruity with notes of tropical fruit</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R180</div>
+                    </div>
+                </div>
+                
+                <div class="menu-item" data-category="wine" data-price="220">
+                    <div class="menu-item-header">
+                        <h3>Pinotage</h3>
+                        <div class="menu-item-actions">
+                            <button class="favorite-btn" data-item="pinotage">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p>Signature South African red, rich with plum and spice notes</p>
+                    <div class="menu-item-footer">
+                        <div class="menu-item-price">R220</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <h3>No menu items found</h3>
+                <p>Try adjusting your search or filters</p>
+                <button id="reset-filters" class="btn">Reset All Filters</button>
             </div>
             
             <div class="text-center" style="margin-top: 40px;">
@@ -130,9 +375,565 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 DEVINE DINE. All Rights Reserved.</p>
+                <p>&copy; <span id="current-year">2023</span> DEVINE DINE. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    // Toggle between hamburger and close icon
+                    const icon = this.querySelector('i');
+                    if (nav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Menu Category Filtering
+            const categoryButtons = document.querySelectorAll('.menu-category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+            const noResults = document.getElementById('no-results');
+            const resetFiltersBtn = document.getElementById('reset-filters');
+            
+            // Search functionality
+            const searchInput = document.getElementById('menu-search');
+            
+            // Dietary filters
+            const dietaryFilterBtns = document.querySelectorAll('.dietary-filter-btn');
+            
+            // Sort functionality
+            const sortSelect = document.getElementById('sort-menu');
+            
+            // Favorites functionality
+            const favoriteBtns = document.querySelectorAll('.favorite-btn');
+            
+            // Load favorites from localStorage
+            let favorites = JSON.parse(localStorage.getItem('devineDineFavorites')) || [];
+            
+            // Initialize favorites UI
+            updateFavoritesUI();
+            
+            // Active filters object
+            let activeFilters = {
+                category: 'all',
+                search: '',
+                dietary: [],
+                sort: 'default'
+            };
+            
+            // Category filter
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    activeFilters.category = this.getAttribute('data-category');
+                    filterMenuItems();
+                });
+            });
+            
+            // Search filter
+            searchInput.addEventListener('input', function() {
+                activeFilters.search = this.value.toLowerCase();
+                filterMenuItems();
+            });
+            
+            // Dietary filters
+            dietaryFilterBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    const diet = this.getAttribute('data-diet');
+                    
+                    if (this.classList.contains('active')) {
+                        this.classList.remove('active');
+                        activeFilters.dietary = activeFilters.dietary.filter(d => d !== diet);
+                    } else {
+                        this.classList.add('active');
+                        activeFilters.dietary.push(diet);
+                    }
+                    
+                    filterMenuItems();
+                });
+            });
+            
+            // Sort functionality
+            sortSelect.addEventListener('change', function() {
+                activeFilters.sort = this.value;
+                filterMenuItems();
+            });
+            
+            // Reset all filters
+            resetFiltersBtn.addEventListener('click', function() {
+                // Reset category
+                categoryButtons.forEach(btn => {
+                    if (btn.getAttribute('data-category') === 'all') {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+                
+                // Reset search
+                searchInput.value = '';
+                
+                // Reset dietary filters
+                dietaryFilterBtns.forEach(btn => btn.classList.remove('active'));
+                
+                // Reset sort
+                sortSelect.value = 'default';
+                
+                // Reset active filters
+                activeFilters = {
+                    category: 'all',
+                    search: '',
+                    dietary: [],
+                    sort: 'default'
+                };
+                
+                filterMenuItems();
+            });
+            
+            // Favorites functionality
+            favoriteBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemId = this.getAttribute('data-item');
+                    const heartIcon = this.querySelector('i');
+                    
+                    if (favorites.includes(itemId)) {
+                        // Remove from favorites
+                        favorites = favorites.filter(id => id !== itemId);
+                        heartIcon.classList.remove('fas');
+                        heartIcon.classList.add('far');
+                        showNotification('Removed from favorites');
+                    } else {
+                        // Add to favorites
+                        favorites.push(itemId);
+                        heartIcon.classList.remove('far');
+                        heartIcon.classList.add('fas');
+                        showNotification('Added to favorites');
+                    }
+                    
+                    // Save to localStorage
+                    localStorage.setItem('devineDineFavorites', JSON.stringify(favorites));
+                });
+            });
+            
+            // Main filtering function
+            function filterMenuItems() {
+                let visibleItems = 0;
+                
+                menuItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    const name = item.querySelector('h3').textContent.toLowerCase();
+                    const description = item.querySelector('p').textContent.toLowerCase();
+                    const dietary = item.getAttribute('data-diet');
+                    const price = parseInt(item.getAttribute('data-price'));
+                    
+                    // Check category filter
+                    const categoryMatch = activeFilters.category === 'all' || category === activeFilters.category;
+                    
+                    // Check search filter
+                    const searchMatch = activeFilters.search === '' || 
+                                       name.includes(activeFilters.search) || 
+                                       description.includes(activeFilters.search);
+                    
+                    // Check dietary filters
+                    let dietaryMatch = true;
+                    if (activeFilters.dietary.length > 0) {
+                        dietaryMatch = dietary && activeFilters.dietary.includes(dietary);
+                    }
+                    
+                    // Show/hide based on filters
+                    if (categoryMatch && searchMatch && dietaryMatch) {
+                        item.style.display = 'block';
+                        visibleItems++;
+                        
+                        // Add animation
+                        item.style.animation = 'fadeIn 0.5s ease-in';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide no results message
+                if (visibleItems === 0) {
+                    noResults.style.display = 'block';
+                } else {
+                    noResults.style.display = 'none';
+                }
+                
+                // Sort items if needed
+                if (activeFilters.sort !== 'default') {
+                    sortMenuItems();
+                }
+            }
+            
+            // Sort menu items
+            function sortMenuItems() {
+                const menuContainer = document.querySelector('.menu-items');
+                const items = Array.from(menuContainer.querySelectorAll('.menu-item'));
+                
+                items.sort((a, b) => {
+                    const aPrice = parseInt(a.getAttribute('data-price'));
+                    const bPrice = parseInt(b.getAttribute('data-price'));
+                    const aName = a.querySelector('h3').textContent;
+                    const bName = b.querySelector('h3').textContent;
+                    
+                    switch (activeFilters.sort) {
+                        case 'price-low':
+                            return aPrice - bPrice;
+                        case 'price-high':
+                            return bPrice - aPrice;
+                        case 'name':
+                            return aName.localeCompare(bName);
+                        default:
+                            return 0;
+                    }
+                });
+                
+                // Re-append items in sorted order
+                items.forEach(item => menuContainer.appendChild(item));
+            }
+            
+            // Update favorites UI
+            function updateFavoritesUI() {
+                favoriteBtns.forEach(button => {
+                    const itemId = button.getAttribute('data-item');
+                    const heartIcon = button.querySelector('i');
+                    
+                    if (favorites.includes(itemId)) {
+                        heartIcon.classList.remove('far');
+                        heartIcon.classList.add('fas');
+                    } else {
+                        heartIcon.classList.remove('fas');
+                        heartIcon.classList.add('far');
+                    }
+                });
+            }
+            
+            // Show notification
+            function showNotification(message) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+                
+                // Add styles
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: var(--accent-color);
+                    color: white;
+                    padding: 15px 20px;
+                    border-radius: 5px;
+                    z-index: 10000;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    animation: slideIn 0.3s ease-out;
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease-in';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            notification.parentNode.removeChild(notification);
+                        }
+                    }, 300);
+                }, 3000);
+            }
+            
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation to menu items on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe menu items for animation
+            menuItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+    <style>
+        /* Additional CSS for JavaScript functionality */
+        nav.active {
+            display: block !important;
+        }
+        
+        header.scrolled {
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .menu-item.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Menu Controls */
+        .menu-controls {
+            margin-bottom: 30px;
+        }
+        
+        .search-container {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+        
+        #menu-search {
+            width: 100%;
+            padding: 12px 45px 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .search-container i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .filter-controls {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .dietary-filters, .sort-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .dietary-filters span, .sort-controls span {
+            font-weight: 600;
+        }
+        
+        .dietary-filter-btn {
+            padding: 8px 15px;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dietary-filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+        
+        #sort-menu {
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: white;
+        }
+        
+        /* Menu Item Styling */
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .menu-item-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .favorite-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #ddd;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+        
+        .favorite-btn:hover, .favorite-btn .fas {
+            color: #e74c3c;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .dietary-tags {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .dietary-tag {
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .dietary-tag.vegetarian {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .dietary-tag.gluten-free {
+            background: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .dietary-tag.spicy {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        
+        /* Responsive navigation */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.95);
+                z-index: 1000;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px 0;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .filter-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-item-actions {
+                margin-top: 10px;
+            }
+            
+            .menu-item-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+    </style>
 </body>
 </html>

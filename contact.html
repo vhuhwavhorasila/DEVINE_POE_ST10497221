@@ -4,7 +4,358 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | DEVINE DINE</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #d4af37;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0 80px;
+            margin-top: 60px;
+        }
+        
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 80px 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-detail i {
+            color: #d4af37;
+            font-size: 20px;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-detail h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #1a1a1a;
+        }
+        
+        /* Form Styles - Updated with Black Text and Borders */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a1a; /* Black text for labels */
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #1a1a1a; /* Black border */
+            border-radius: 5px;
+            font-size: 16px;
+            color: #1a1a1a; /* Black text */
+            background-color: #fff;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37; /* Gold accent on focus */
+            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+        }
+        
+        .form-group input::placeholder {
+            color: #666; /* Slightly lighter for placeholder text */
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #d4af37;
+            color: #fff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #b8941f;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-about {
+            flex: 2;
+        }
+        
+        .footer-links, .footer-hours {
+            flex: 1;
+        }
+        
+        .footer-logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo span {
+            color: #d4af37;
+        }
+        
+        .footer-social {
+            margin-top: 15px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            color: #fff;
+            background: #333;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background: #d4af37;
+            transform: translateY(-3px);
+        }
+        
+        .footer-links h3, .footer-hours h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links ul li a:hover {
+            color: #d4af37;
+        }
+        
+        .footer-hours p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1a1a1a;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-about, .footer-links, .footer-hours {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -25,7 +376,7 @@
         </div>
     </header>
     
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');">
+    <section class="hero">
         <div class="container hero-content">
             <h1>Contact Us</h1>
             <p>We'd love to hear from you</p>
@@ -82,11 +433,19 @@
                         </div>
                         <div class="form-group">
                             <label for="contact-email">Email</label>
-                            <input type="email" id="contact-email" required>
+                            <input type="email" id="contact-email" required placeholder="Your email address">
                         </div>
                         <div class="form-group">
                             <label for="contact-subject">Subject</label>
-                            <input type="text" id="contact-subject" required>
+                            <select id="contact-subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="general">General Question</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="event">Event Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="contact-message">Message</label>
@@ -96,39 +455,6 @@
                             <button type="submit" class="btn">Send Message</button>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="map-section">
-        <div class="container">
-            <h2 class="text-center">Find Us</h2>
-            <div class="map" style="height: 400px;">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13246.10112772569!2d18.41594036977538!3d-33.907288999999984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67558dca66c7%3A0xfce46c260c4a9c05!2sVictoria%20%26%20Alfred%20Waterfront!5e0!3m2!1sen!2sza!4v1687281598322!5m2!1sen!2sza" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" style="background-color: #f9f9f9;">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <div class="faq-list" style="margin-top: 40px;">
-                <div class="faq-item" style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;">
-                    <h3>Do you accommodate dietary restrictions?</h3>
-                    <p>Yes, we gladly accommodate dietary restrictions and allergies. Please inform us when making your reservation, and our chefs will prepare suitable alternatives.</p>
-                </div>
-                <div class="faq-item" style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;">
-                    <h3>What is the dress code?</h3>
-                    <p>We recommend smart casual attire. While we don't require jackets, we ask guests to avoid beachwear, athletic wear, and flip-flops.</p>
-                </div>
-                <div class="faq-item" style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;">
-                    <h3>Is there parking available?</h3>
-                    <p>Valet parking is available at the restaurant entrance. Alternatively, there is paid parking at the Victoria & Alfred Waterfront parking garage.</p>
-                </div>
-                <div class="faq-item" style="margin-bottom: 20px; background: white; padding: 20px; border-radius: 5px;">
-                    <h3>Do you offer gift certificates?</h3>
-                    <p>Yes, we offer gift certificates that can be purchased in person or over the phone. They make perfect gifts for special occasions.</p>
                 </div>
             </div>
         </div>
@@ -168,5 +494,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    nav.classList.toggle('active');
+                    // Toggle between hamburger and close icon
+                    const icon = this.querySelector('i');
+                    if (nav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+            
+            // Form submission
+            const contactForm = document.querySelector('.contact-form form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    this.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

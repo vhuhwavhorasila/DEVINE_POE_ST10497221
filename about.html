@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | DEVINE DINE</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
    <header>
@@ -29,6 +31,9 @@
         <div class="container hero-content">
             <h1>About DEVINE DINE</h1>
             <p>Discover our story and passion for South African cuisine</p>
+            <button id="scroll-down-btn" class="scroll-btn">
+                <i class="fas fa-chevron-down"></i>
+            </button>
         </div>
     </section>
 
@@ -41,7 +46,7 @@
                     <p>Our name, DEVINE DINE, represents our commitment to divine flavors and divine experiences. We believe that dining should engage all the senses and create lasting memories.</p>
                 </div>
                 <div class="about-image">
-                    <img src="imagess/WhatsApp Image 2025-08-27 at 15.03.57.jpeg" alt="Chef Vhuhwavho Rasila">
+                    <img src="imagess/WhatsApp Image 2025-08-27 at 15.03.57.jpeg" alt="Chef Vhuhwavho Rasila" loading="lazy">
                 </div>
             </div>
             
@@ -53,7 +58,7 @@
                     <p>We believe that exceptional food is just one part of the dining experience. Our attentive service, elegant ambiance, and carefully curated wine list complete what we hope will be an unforgettable experience for our guests.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1015&q=80" alt="Local Ingredients">
+                    <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b3029?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1015&q=80" alt="Local Ingredients" loading="lazy">
                 </div>
             </div>
         </div>
@@ -64,26 +69,39 @@
             <h2 class="text-center">Meet Our Team</h2>
             <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px;">
                 <div class="team-member" style="text-align: center;">
-                    <img src="imagess/WhatsApp Image 2025-08-27 at 15.03.57.jpeg" alt="Chef Vhuhwavho Rasila" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;">
+                    <img src="imagess/WhatsApp Image 2025-08-27 at 15.03.57.jpeg" alt="Chef Vhuhwavho Rasila" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;" loading="lazy">
                     <h3>Vhuhwavho Rasila</h3>
                     <p style="color: var(--accent-color); font-weight: 600;">Executive Chef & Owner</p>
                     <p>With experience in Michelin-starred restaurants across Europe, Chef Vhuhwavho Rasila brings innovation and expertise to every dish.</p>
+                    <button class="team-detail-btn" data-member="vhuhwavho">More Info</button>
                 </div>
                 <div class="team-member" style="text-align: center;">
-                    <img src="imagess/medium-shot-professional-chef-posing.jpg" alt="Sommelier" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;">
+                    <img src="imagess/medium-shot-professional-chef-posing.jpg" alt="Sommelier" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;" loading="lazy">
                     <h3>Nomsa Dlamini</h3>
                     <p style="color: var(--accent-color); font-weight: 600;">Head Sommelier</p>
                     <p>Nomsa curates our extensive wine list, featuring the finest South African wines alongside international selections.</p>
+                    <button class="team-detail-btn" data-member="nomsa">More Info</button>
                 </div>
                 <div class="team-member" style="text-align: center;">
-                    <img src="imagess/medium-shot-forest-warden-wearing-hat.jpg" alt="Manager" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;">
+                    <img src="imagess/medium-shot-forest-warden-wearing-hat.jpg" alt="Manager" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;" loading="lazy">
                     <h3>Takudzwa Mnudenda</h3>
                     <p style="color: var(--accent-color); font-weight: 600;">Restaurant Manager</p>
                     <p>Takudzwa ensures that every guest receives impeccable service and has an unforgettable dining experience.</p>
+                    <button class="team-detail-btn" data-member="takudzwa">More Info</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Team Member Detail Modal -->
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 
    <footer>
         <div class="container">
@@ -110,8 +128,8 @@
                 </div>
                 <div class="footer-hours">
                     <h3>Opening Hours</h3>
-                    <p><span>Monday - Saturday:</span> <span>5:00 PM - 10:00 PM</span></p>
-                    <p><span>Sunday:</span> <span>11:00 AM - 3:00 PM</span></p>
+                    <p><span>Monday - Saturday:</span> <span>6:00 PM - 10:00 PM</span></p>
+                    <p><span>Sunday:</span> <span>6:00 AM - 6:00 PM</span></p>
                 </div>
             </div>
             <div class="copyright">
@@ -119,5 +137,298 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        nav.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                    }
+                });
+            });
+
+            // Scroll down button functionality
+            const scrollDownBtn = document.getElementById('scroll-down-btn');
+            if (scrollDownBtn) {
+                scrollDownBtn.addEventListener('click', function() {
+                    const aboutSection = document.getElementById('about-detail');
+                    window.scrollTo({
+                        top: aboutSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Team member modal functionality
+            const teamModal = document.getElementById('team-modal');
+            const closeModal = document.querySelector('.close-modal');
+            const modalBody = document.getElementById('modal-body');
+            const teamDetailBtns = document.querySelectorAll('.team-detail-btn');
+
+            // Team member data
+            const teamData = {
+                vhuhwavho: {
+                    name: "Vhuhwavho Rasila",
+                    title: "Executive Chef & Owner",
+                    image: "imagess/WhatsApp Image 2025-08-27 at 15.03.57.jpeg",
+                    bio: "With over 20 years of international experience, Chef Vhuhwavho Rasila has worked in Michelin-starred restaurants across Europe before returning to South Africa to establish DEVINE DINE. Her culinary philosophy centers on celebrating South Africa's diverse culinary heritage while incorporating modern techniques and global influences.",
+                    specialties: ["Modern South African Cuisine", "Fusion Techniques", "Sustainable Cooking"],
+                    achievements: ["Michelin Star Experience", "International Culinary Awards", "Featured in Food & Wine Magazine"]
+                },
+                nomsa: {
+                    name: "Nomsa Dlamini",
+                    title: "Head Sommelier",
+                    image: "imagess/medium-shot-professional-chef-posing.jpg",
+                    bio: "Nomsa Dlamini brings over 15 years of experience in wine curation and hospitality. She has traveled extensively through South Africa's wine regions and holds certifications from the Court of Master Sommeliers. Her passion is discovering hidden gems from local vineyards.",
+                    specialties: ["South African Wines", "Wine & Food Pairing", "Vintage Selection"],
+                    achievements: ["Certified Sommelier", "Wine Competition Judge", "Featured in Wine Spectator"]
+                },
+                takudzwa: {
+                    name: "Takudzwa Mnudenda",
+                    title: "Restaurant Manager",
+                    image: "imagess/medium-shot-forest-warden-wearing-hat.jpg",
+                    bio: "Takudzwa has been in the hospitality industry for over 12 years, managing high-end restaurants in Johannesburg and Cape Town. His attention to detail and commitment to exceptional service ensures every guest has a memorable experience at DEVINE DINE.",
+                    specialties: ["Guest Experience", "Team Leadership", "Event Planning"],
+                    achievements: ["Hospitality Excellence Award", "Featured in Restaurant Business Magazine", "Guest Satisfaction Awards"]
+                }
+            };
+
+            // Open modal with team member details
+            teamDetailBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const memberId = this.getAttribute('data-member');
+                    const member = teamData[memberId];
+                    
+                    if (member) {
+                        modalBody.innerHTML = `
+                            <div class="modal-team-member">
+                                <img src="${member.image}" alt="${member.name}" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 20px;">
+                                <h2>${member.name}</h2>
+                                <p class="member-title" style="color: var(--accent-color); font-weight: 600; margin-bottom: 20px;">${member.title}</p>
+                                <p class="member-bio" style="margin-bottom: 20px;">${member.bio}</p>
+                                <div class="member-details">
+                                    <div class="specialties">
+                                        <h3>Specialties</h3>
+                                        <ul>
+                                            ${member.specialties.map(specialty => `<li>${specialty}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                    <div class="achievements">
+                                        <h3>Achievements</h3>
+                                        <ul>
+                                            ${member.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        teamModal.style.display = "block";
+                    }
+                });
+            });
+
+            // Close modal
+            closeModal.addEventListener('click', function() {
+                teamModal.style.display = "none";
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === teamModal) {
+                    teamModal.style.display = "none";
+                }
+            });
+
+            // Add scroll animation to elements
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.about-content, .team-member').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Current year in footer
+            document.querySelector('.copyright p').innerHTML = `&copy; ${new Date().getFullYear()} DEVINE DINE. All Rights Reserved.`;
+        });
+    </script>
+
+    <style>
+        /* Additional CSS for JavaScript features */
+        .mobile-menu-btn.active + nav {
+            display: block;
+        }
+        
+        .scroll-btn {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-50%) scale(1.1);
+        }
+        
+        .team-detail-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .team-detail-btn:hover {
+            background: #d4a762;
+            transform: translateY(-2px);
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+        
+        .modal-team-member {
+            text-align: center;
+        }
+        
+        .member-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .member-details h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .member-details ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .member-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .member-details li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Animation for scroll-triggered elements */
+        .about-content, .team-member {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .about-content.fade-in, .team-member.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .member-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 90%;
+                margin: 10% auto;
+            }
+        }
+    </style>
 </body>
 </html>

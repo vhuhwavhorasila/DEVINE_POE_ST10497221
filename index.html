@@ -6,6 +6,40 @@
     <title>DEVINE DINE | Fine Dining Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS for form elements */
+        input, select, textarea {
+            color: #000 !important;
+            background-color: #fff;
+        }
+        
+        /* Mobile menu styles */
+        nav.active {
+            display: block !important;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     
@@ -114,6 +148,14 @@
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
                 </div>
                 <div class="form-group full">
                     <label for="special">Special Requests</label>
@@ -228,7 +270,41 @@
     </footer>
 
     <script>
+        // Ensure all form inputs have black text initially and white text when typing
+        document.addEventListener('DOMContentLoaded', function() {
+            // Apply black color to all form inputs initially
+            const formInputs = document.querySelectorAll('input, select, textarea');
+            formInputs.forEach(input => {
+                input.style.color = '#000';
+                input.style.backgroundColor = '#fff';
+            });
+            
+            // Change text color to white when user focuses on input
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.color = '#fff';
+                    this.style.backgroundColor = '#333';
+                });
+            });
+            
+            // Change text color back to black when user leaves the input
+            formInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    this.style.color = '#000';
+                    this.style.backgroundColor = '#fff';
+                });
+            });
+            
+            // Ensure the text stays white while typing
+            formInputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    this.style.color = '#fff';
+                    this.style.backgroundColor = '#333';
+                });
+            });
+        });
         
+        // Mobile menu toggle
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
         
@@ -238,7 +314,7 @@
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
         
-        
+        // Menu category switching
         const categoryBtns = document.querySelectorAll('.menu-category-btn');
         
         categoryBtns.forEach(btn => {
@@ -246,12 +322,69 @@
                 categoryBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 
+                // In a real implementation, you would update the menu items here
+                // For this example, we'll just log the selected category
+                console.log(`Selected category: ${btn.textContent}`);
             });
         });
         
-       
+        // Set minimum date for reservation to today
         const dateInput = document.getElementById('date');
         const today = new Date().toISOString().split('T')[0];
         dateInput.min = today;
+        
+        // Form validation and submission
+        const reservationForm = document.querySelector('.reservation-form');
+        reservationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            let isValid = true;
+            const requiredFields = document.querySelectorAll('input[required], select[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = 'red';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+            
+            if (isValid) {
+                // In a real implementation, you would send the form data to a server
+                // For this example, we'll just show a success message
+                alert('Thank you! Your reservation request has been submitted. We will contact you shortly to confirm.');
+                reservationForm.reset();
+                
+                // Reset all form inputs to black text after submission
+                const formInputs = document.querySelectorAll('input, select, textarea');
+                formInputs.forEach(input => {
+                    input.style.color = '#000';
+                    input.style.backgroundColor = '#fff';
+                });
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
+</html>

@@ -5,35 +5,1037 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events | Divine Dining</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutus.html">About Us</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">
+                    <a href="index.html">Divine Dining</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="events">
-        <h1>Upcoming Events</h1>
-        <div class="event-item">
-            <p>Join us for an evening of Mother's day, Father's day, & All day every Monday.</p>
+    <section class="events-hero">
+        <div class="container">
+            <h1>Upcoming Events</h1>
+            <p>Join us for unforgettable culinary experiences and special celebrations</p>
         </div>
     </section>
 
-            <img src="../Assets/event 1.jpeg" alt="event 1" width="400" height="500">
-            <img src="../Assets/event 2.jpeg" alt="event 2" width="400" height="500">
-            <img src="../Assets/event 3.jpeg" alt="event 3" width="400" height="500">
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Events</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="special">Special Occasions</button>
+                <button class="filter-btn" data-filter="weekly">Weekly Events</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-list">
+        <div class="container">
+            <div class="event-item" data-category="special upcoming">
+                <div class="event-image">
+                    <img src="../Assets/event 1.jpeg" alt="Mother's Day Celebration">
+                    <div class="event-badge">Special Event</div>
+                </div>
+                <div class="event-content">
+                    <h3>Mother's Day Celebration</h3>
+                    <div class="event-meta">
+                        <span class="event-date"><i class="far fa-calendar"></i> May 12, 2024</span>
+                        <span class="event-time"><i class="far fa-clock"></i> 11:00 AM - 3:00 PM</span>
+                        <span class="event-price"><i class="fas fa-tag"></i> R450 per person</span>
+                    </div>
+                    <p>Treat the special mother in your life to an exquisite brunch experience. Our Mother's Day celebration features a special menu, live music, and a complimentary gift for all mothers.</p>
+                    <div class="event-countdown" data-date="2024-05-12T11:00:00">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn" data-event="mothers-day">Register Now</button>
+                        <button class="btn btn-secondary details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item" data-category="special upcoming">
+                <div class="event-image">
+                    <img src="../Assets/event 2.jpeg" alt="Father's Day Grill Master">
+                    <div class="event-badge">Special Event</div>
+                </div>
+                <div class="event-content">
+                    <h3>Father's Day Grill Master</h3>
+                    <div class="event-meta">
+                        <span class="event-date"><i class="far fa-calendar"></i> June 16, 2024</span>
+                        <span class="event-time"><i class="far fa-clock"></i> 1:00 PM - 5:00 PM</span>
+                        <span class="event-price"><i class="fas fa-tag"></i> R550 per person</span>
+                    </div>
+                    <p>Celebrate Father's Day with our Grill Master event featuring premium cuts, craft beers, and interactive grilling stations. Dads receive a special gift and access to our cigar lounge.</p>
+                    <div class="event-countdown" data-date="2024-06-16T13:00:00">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn" data-event="fathers-day">Register Now</button>
+                        <button class="btn btn-secondary details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item" data-category="weekly">
+                <div class="event-image">
+                    <img src="../Assets/event 3.jpeg" alt="Monday Wine Tasting">
+                    <div class="event-badge">Weekly Event</div>
+                </div>
+                <div class="event-content">
+                    <h3>Monday Wine Tasting</h3>
+                    <div class="event-meta">
+                        <span class="event-date"><i class="far fa-calendar"></i> Every Monday</span>
+                        <span class="event-time"><i class="far fa-clock"></i> 6:00 PM - 9:00 PM</span>
+                        <span class="event-price"><i class="fas fa-tag"></i> R250 per person</span>
+                    </div>
+                    <p>Join us every Monday for an exclusive wine tasting experience. Sample a curated selection of South African wines paired with artisanal cheeses and charcuterie. Each week features a different wine region.</p>
+                    <div class="event-recurring">
+                        <p><i class="fas fa-redo"></i> This event repeats every Monday</p>
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn" data-event="monday-wine">Book Your Spot</button>
+                        <button class="btn btn-secondary details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item" data-category="weekly">
+                <div class="event-image">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Friday Jazz Night">
+                    <div class="event-badge">Weekly Event</div>
+                </div>
+                <div class="event-content">
+                    <h3>Friday Jazz Night</h3>
+                    <div class="event-meta">
+                        <span class="event-date"><i class="far fa-calendar"></i> Every Friday</span>
+                        <span class="event-time"><i class="far fa-clock"></i> 7:00 PM - 11:00 PM</span>
+                        <span class="event-price"><i class="fas fa-tag"></i> No cover charge</span>
+                    </div>
+                    <p>Relax and unwind with live jazz performances every Friday night. Enjoy our signature cocktails and late-night menu in a sophisticated atmosphere. Featuring local and international jazz artists.</p>
+                    <div class="event-recurring">
+                        <p><i class="fas fa-redo"></i> This event repeats every Friday</p>
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn" data-event="friday-jazz">Make Reservation</button>
+                        <button class="btn btn-secondary details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-gallery">
+        <div class="container">
+            <h2>Event Gallery</h2>
+            <p>Take a look at our past events and celebrations</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../Assets/event 1.jpeg" alt="Event 1" data-full="../Assets/event 1.jpeg">
+                    <div class="gallery-overlay">
+                        <h4>Mother's Day 2023</h4>
+                        <button class="gallery-view-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../Assets/event 2.jpeg" alt="Event 2" data-full="../Assets/event 2.jpeg">
+                    <div class="gallery-overlay">
+                        <h4>Father's Day 2023</h4>
+                        <button class="gallery-view-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="../Assets/event 3.jpeg" alt="Event 3" data-full="../Assets/event 3.jpeg">
+                    <div class="gallery-overlay">
+                        <h4>Wine Tasting</h4>
+                        <button class="gallery-view-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Jazz Night" data-full="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80">
+                    <div class="gallery-overlay">
+                        <h4>Jazz Night</h4>
+                        <button class="gallery-view-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Registration Modal -->
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Event Registration</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Number of Guests</label>
+                    <select id="guests" name="guests" required>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6+ People</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="modal gallery-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <div class="image-caption">
+                <h3 id="image-title">Event Image</h3>
+            </div>
+            <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
 
     <footer>
-        <p>&copy; 2023 Divine Dining. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; <span id="current-year">2023</span> Divine Dining. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    // Toggle between hamburger and close icon
+                    const icon = this.querySelector('i');
+                    if (navMenu.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            }
+
+            // Event Filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const eventItems = document.querySelectorAll('.event-item');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Show/hide event items based on filter
+                    eventItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                            item.style.display = 'flex';
+                            // Add fade-in animation
+                            item.style.animation = 'fadeIn 0.5s ease-in';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Countdown Timers
+            function updateCountdowns() {
+                const countdowns = document.querySelectorAll('.event-countdown');
+                
+                countdowns.forEach(countdown => {
+                    const eventDate = new Date(countdown.getAttribute('data-date')).getTime();
+                    const now = new Date().getTime();
+                    const distance = eventDate - now;
+                    
+                    if (distance < 0) {
+                        countdown.innerHTML = '<p class="event-ended">This event has ended</p>';
+                        return;
+                    }
+                    
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                    // Update countdown display
+                    const dayElement = countdown.querySelector('#days');
+                    const hourElement = countdown.querySelector('#hours');
+                    const minuteElement = countdown.querySelector('#minutes');
+                    const secondElement = countdown.querySelector('#seconds');
+                    
+                    if (dayElement) dayElement.textContent = days.toString().padStart(2, '0');
+                    if (hourElement) hourElement.textContent = hours.toString().padStart(2, '0');
+                    if (minuteElement) minuteElement.textContent = minutes.toString().padStart(2, '0');
+                    if (secondElement) secondElement.textContent = seconds.toString().padStart(2, '0');
+                });
+            }
+            
+            // Update countdowns every second
+            setInterval(updateCountdowns, 1000);
+            updateCountdowns(); // Initial call
+
+            // Event Registration Modal
+            const registrationModal = document.getElementById('registration-modal');
+            const registerButtons = document.querySelectorAll('.register-btn');
+            const closeModalButtons = document.querySelectorAll('.close-modal');
+            const modalTitle = document.getElementById('modal-title');
+            
+            registerButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const eventName = this.getAttribute('data-event');
+                    modalTitle.textContent = `Register for ${formatEventName(eventName)}`;
+                    registrationModal.style.display = 'block';
+                });
+            });
+            
+            // Format event name for display
+            function formatEventName(eventName) {
+                return eventName.split('-')
+                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
+            
+            // Close modals
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    registrationModal.style.display = 'none';
+                    galleryModal.style.display = 'none';
+                });
+            });
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === registrationModal) {
+                    registrationModal.style.display = 'none';
+                }
+                if (e.target === galleryModal) {
+                    galleryModal.style.display = 'none';
+                }
+            });
+            
+            // Registration Form Submission
+            const registrationForm = document.getElementById('registration-form');
+            registrationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // In a real application, you would send this data to a server
+                const formData = new FormData(this);
+                const formObject = Object.fromEntries(formData);
+                
+                // Show success message
+                alert('Thank you for your registration! We will contact you soon to confirm your booking.');
+                
+                // Close modal and reset form
+                registrationModal.style.display = 'none';
+                this.reset();
+            });
+
+            // Gallery Modal
+            const galleryModal = document.getElementById('gallery-modal');
+            const galleryViewButtons = document.querySelectorAll('.gallery-view-btn');
+            const modalImage = document.getElementById('modal-image');
+            const imageTitle = document.getElementById('image-title');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let currentImageIndex = 0;
+            
+            galleryViewButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    const galleryItem = this.closest('.gallery-item');
+                    const img = galleryItem.querySelector('img');
+                    const title = galleryItem.querySelector('h4').textContent;
+                    
+                    modalImage.src = img.getAttribute('data-full');
+                    imageTitle.textContent = title;
+                    currentImageIndex = index;
+                    
+                    galleryModal.style.display = 'block';
+                });
+            });
+            
+            // Gallery Navigation
+            const prevButton = document.querySelector('.gallery-nav.prev');
+            const nextButton = document.querySelector('.gallery-nav.next');
+            
+            prevButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                updateGalleryModal();
+            });
+            
+            nextButton.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                updateGalleryModal();
+            });
+            
+            function updateGalleryModal() {
+                const galleryItem = galleryItems[currentImageIndex];
+                const img = galleryItem.querySelector('img');
+                const title = galleryItem.querySelector('h4').textContent;
+                
+                modalImage.src = img.getAttribute('data-full');
+                imageTitle.textContent = title;
+            }
+            
+            // Keyboard navigation for gallery
+            document.addEventListener('keydown', function(e) {
+                if (galleryModal.style.display === 'block') {
+                    if (e.key === 'ArrowLeft') {
+                        currentImageIndex = (currentImageIndex - 1 + galleryItems.length) % galleryItems.length;
+                        updateGalleryModal();
+                    } else if (e.key === 'ArrowRight') {
+                        currentImageIndex = (currentImageIndex + 1) % galleryItems.length;
+                        updateGalleryModal();
+                    } else if (e.key === 'Escape') {
+                        galleryModal.style.display = 'none';
+                    }
+                }
+            });
+
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Add scroll effect to header
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(26, 26, 26, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-brand a {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #d4af37;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .events-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 150px 0 80px;
+            margin-top: 60px;
+        }
+        
+        .events-hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .events-hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Events Filter */
+        .events-filter {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .filter-btn {
+            padding: 10px 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #d4af37;
+            color: #fff;
+            border-color: #d4af37;
+        }
+        
+        /* Events List */
+        .events-list {
+            padding: 80px 0;
+        }
+        
+        .event-item {
+            display: flex;
+            margin-bottom: 60px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        .event-image {
+            flex: 0 0 40%;
+            position: relative;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .event-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #d4af37;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .event-content {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .event-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .event-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+        }
+        
+        .event-meta i {
+            color: #d4af37;
+        }
+        
+        .event-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        .event-countdown {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+            background: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 70px;
+        }
+        
+        .countdown-number {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .event-ended {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .event-recurring {
+            background: #e8f4fd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .event-recurring p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #3498db;
+        }
+        
+        .event-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: #d4af37;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: #b8941f;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+        }
+        
+        .btn-secondary:hover {
+            background: #d4af37;
+            color: #fff;
+        }
+        
+        /* Events Gallery */
+        .events-gallery {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .events-gallery h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .events-gallery > .container > p {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #666;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .gallery-overlay h4 {
+            margin: 0;
+        }
+        
+        .gallery-view-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .gallery-view-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            animation: modalFadeIn 0.3s;
+        }
+        
+        .gallery-modal .modal-content {
+            max-width: 800px;
+            padding: 0;
+            background: transparent;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+            z-index: 10;
+        }
+        
+        .gallery-modal .close-modal {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-modal:hover {
+            color: #000;
+        }
+        
+        .gallery-modal .close-modal:hover {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        #modal-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .gallery-modal img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+        
+        .image-caption {
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s ease;
+        }
+        
+        .gallery-nav:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .gallery-nav.prev {
+            left: 20px;
+        }
+        
+        .gallery-nav.next {
+            right: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #1a1a1a;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 10px 0;
+            }
+            
+            .events-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .events-hero h1 {
+                font-size: 36px;
+            }
+            
+            .event-item {
+                flex-direction: column;
+            }
+            
+            .event-image {
+                flex: 0 0 auto;
+                height: 250px;
+            }
+            
+            .event-actions {
+                flex-direction: column;
+            }
+            
+            .event-countdown {
+                justify-content: center;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+            }
+        }
+    </style>
 </body>
 </html>
